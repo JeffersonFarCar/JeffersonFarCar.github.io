@@ -1,0 +1,234 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff0f5;
+  overflow-x: hidden;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  animation: slideAnimation linear infinite;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
+.center {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.center-2 {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.love-button {
+  font-size: 1.5rem;
+  background-color: #ff69b4;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.love-button-2 {
+  font-size: 1.5rem;
+  background-color: #ff69b4;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.love-button:hover {
+  background-color: #ff1493;
+}
+
+.player {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #000;
+  color: #0f0;
+  padding: 10px 20px;
+  border-radius: 15px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.player button {
+  background: none;
+  border: none;
+  color: #0f0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.player input[type="range"] {
+  accent-color: #0f0;
+  width: 100px;
+}
+
+.flower-heart {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flower {
+  position: absolute;
+  font-size: 2rem;
+  animation: bloom 1s ease-in-out forwards;
+  transform: scale(0);
+  z-index: 2;
+}
+
+@keyframes bloom {
+  to {
+    transform: scale(1);
+  }
+}
+
+.center-photo-heart {
+  position: fixed; /* Se queda fija en el centro del viewport */
+  top: 70%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width:250px;
+  height:250px;
+  object-fit: cover;
+  z-index: 10;
+  clip-path: path('M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z');
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border: 4px solid white;
+  background-color: white;
+}
+
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  color: red;
+  animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .carousel {
+    height: 300px;
+  }
+
+  .love-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+
+  .player {
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .player button {
+    font-size: 1.2rem;
+  }
+
+  .player input[type="range"] {
+    width: 80px;
+  }
+
+  .center-photo-heart {
+    width: 180px;
+    height: 180px;
+  }
+
+  .flower-heart {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 200px;
+  }
+
+  .love-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .player input[type="range"] {
+    width: 60px;
+  }
+
+  .center-photo-heart {
+    width: 250px;
+    height: 250px;
+  }
+
+  .flower-heart {
+    height: 350px;
+  }
+  
+  .love-button-2 {
+	font-size: 1rem;
+    background-color: #ff69b4;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+.center-2 {
+  text-align: center;
+  margin: 100px 0;
+}
+}
