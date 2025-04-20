@@ -3,7 +3,7 @@ const confettiContainer = document.getElementById("confetti-container");
 const player = document.getElementById("music-player");
 const audio = document.getElementById("audio");
 
-const songs = ["music/song2.mp3", "music/song1.mp3", "music/song3.mp3"];
+const songs = ["music/song1.mp3", "music/song2.mp3", "music/song3.mp3"];
 let currentSong = 0;
 
 function startMagic() {
